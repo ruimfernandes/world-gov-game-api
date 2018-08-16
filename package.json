@@ -1,0 +1,19 @@
+{
+  "name": "world-gov-game-api",
+  "version": "1.0.0",
+  "description": "worrld gov game api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruimfernandes/world-gov-game-api.git"
+  },
+  "author": "Rui Fernandes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ruimfernandes/world-gov-game-api/issues"
+  },
+  "homepage": "https://github.com/ruimfernandes/world-gov-game-api#readme"
+}
