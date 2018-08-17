@@ -4,6 +4,8 @@
   "description": "worrld gov game api",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon src/index.js --exec babel-node",
+    "build": "babel src -d build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +17,19 @@
   "bugs": {
     "url": "https://github.com/ruimfernandes/world-gov-game-api/issues"
   },
-  "homepage": "https://github.com/ruimfernandes/world-gov-game-api#readme"
+  "homepage": "https://github.com/ruimfernandes/world-gov-game-api#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "method-override": "^2.3.9",
+    "mongoose": "^5.2.9",
+    "morgan": "^1.9.0",
+    "q": "^1.5.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "nodemon": "^1.12.1"
+  }
 }
