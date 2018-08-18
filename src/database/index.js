@@ -6,6 +6,7 @@ const adapters = {
 
 export function createDatabase(adapter, configs) {
   const Connection = adapters[adapter];
+
   configs = configs || {};
 
   if (!Connection) {
@@ -13,7 +14,6 @@ export function createDatabase(adapter, configs) {
   } else if (!configs.url) {
     throw new Error(`Config ${adapter}.url is required`);
   } else {
-    console.log("Creating database");
     return new Connection(configs.url, configs.options);
   }
 }

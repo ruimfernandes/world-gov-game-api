@@ -21,6 +21,7 @@ export class MongoConnection extends DbConnection {
         )
         .then(() => {
           console.log("MongoDB is connected");
+          this.onConnected();
         })
         .catch(err => {
           console.log(

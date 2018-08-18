@@ -54,7 +54,6 @@ export class DbConnection extends EventEmitter {
   }
 
   onConnected() {
-    console.log("connected log");
     this.emit("connected");
   }
 
