@@ -12,7 +12,13 @@ export default class BaseService {
   }
 
   find(query, filter) {
-    return this.model.find(query).exec();
+    const { skip, limit, populate } = filter;
+    return this.model
+      .find(query)
+      .limit(limit)
+      .skip(skip)
+      .populate(populate)
+      .exec();
   }
 
   findById(id) {

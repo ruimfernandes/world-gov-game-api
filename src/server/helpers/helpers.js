@@ -20,10 +20,14 @@ export function failIfNotFound(message) {
 }
 
 export function failIfNotRemoved(message) {
-  console.log("message ", message);
-
   return function(remove) {
-    console.log("remove ", remove);
     if (remove.n === 0) throw errors.notFound(message);
+  };
+}
+
+export function unauthorizedIfNotExist(message) {
+  return function(obj) {
+    if (!obj) throw errors.unauthorized(message);
+    else return obj;
   };
 }
