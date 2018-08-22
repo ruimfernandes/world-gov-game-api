@@ -1,6 +1,6 @@
 function defaultHandler(err, req, res, next) {
   const status = err.status || 500,
-    message = err.message || "Server error.";
+    message = err.message || 'Server error.';
   res.status(status).json({ error: message });
 }
 
@@ -16,23 +16,23 @@ function nextErr(next) {
 }
 
 function notFound(message) {
-  return buildError(404, message || "Not found.");
+  return buildError(404, message || 'Not found.');
 }
 
 function unauthorized(message) {
-  return buildError(401, message || "Unauthorized.");
+  return buildError(401, message || 'Unauthorized.');
 }
 
 function forbidden(message) {
-  return buildError(403, message || "Forbidden.");
+  return buildError(403, message || 'Forbidden.');
 }
 
 function badRequest(message) {
-  return buildError(400, message || "Bad request.");
+  return buildError(400, message || 'Bad request.');
 }
 
 function unprocessableEntity(message) {
-  return buildError(422, message || "Unprocessable entity.");
+  return buildError(422, message || 'Unprocessable entity.');
 }
 
 function throwUnprocessableEntity(message) {

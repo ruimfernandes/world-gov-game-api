@@ -1,13 +1,13 @@
-import User from "../../../models/user";
-import * as helpers from "../../helpers/helpers";
-import errors from "../../helpers/errors";
+import User from '../../../models/user';
+import * as helpers from '../../helpers/helpers';
+import errors from '../../helpers/errors';
 
 export class UserController {
   constructor() {}
 
   setUserId(req, res, next) {
     User.findById(req.params.userId)
-      .then(helpers.failIfNotFound("User not found"))
+      .then(helpers.failIfNotFound('User not found'))
       .then(user => {
         req.user = user;
       })
@@ -34,17 +34,17 @@ export class UserController {
         .catch(error => {
           let err;
           if (error.code === 11000) {
-            err = new Error("Email already in use");
+            err = new Error('Email already in use');
             err.status = 401;
           } else {
-            err = new Error("shit");
+            err = new Error('shit');
             err.status = 420;
           }
 
           next(err);
         });
     } else {
-      const err = new Error("Email and password are required");
+      const err = new Error('Email and password are required');
       err.status = 400;
       next(err);
     }
@@ -58,7 +58,7 @@ export class UserController {
 
   delete(req, res, next) {
     User.delete(req.user)
-      .then(helpers.failIfNotRemoved("Error deleting user"))
+      .then(helpers.failIfNotRemoved('Error deleting user'))
       .then(helpers.successEmptyResponse(res))
       .catch(errors.nextErr(next));
   }

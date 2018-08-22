@@ -1,4 +1,4 @@
-import * as helpers from "../../helpers/helpers";
+import * as helpers from '../../helpers/helpers';
 
 export class MeController {
   me(req, res) {

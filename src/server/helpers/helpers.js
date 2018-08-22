@@ -1,4 +1,4 @@
-import errors from "./errors";
+import errors from './errors';
 
 export function successResponse(response) {
   return function(body) {

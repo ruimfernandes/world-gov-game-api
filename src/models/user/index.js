@@ -1,10 +1,10 @@
-import bcrypt from "bcryptjs";
-import Users from "./user";
-import BaseService from "../base-service";
+import bcrypt from 'bcryptjs';
+import User from './model';
+import BaseService from '../base-service';
 
 export class UserService extends BaseService {
   constructor() {
-    super(Users);
+    super(User);
   }
 
   create(values) {

@@ -1,10 +1,10 @@
-import { Router } from "express";
-import ctrl from "./controller";
+import { Router } from 'express';
+import ctrl from './controller';
 
 function MeRouter() {
   const router = Router();
 
-  router.get("/", ctrl.me);
+  router.get('/', ctrl.me);
 
   return router;
 }

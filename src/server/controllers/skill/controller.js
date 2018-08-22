@@ -1,13 +1,13 @@
-import Skill from "../../../models/skill";
-import * as helpers from "../../helpers/helpers";
-import errors from "../../helpers/errors";
+import Skill from '../../../models/skill';
+import * as helpers from '../../helpers/helpers';
+import errors from '../../helpers/errors';
 
 export class SkillController {
   constructor() {}
 
   setSkillId(req, res, next) {
     Skill.findById(req.params.skillId)
-      .then(helpers.failIfNotFound("Skill not found"))
+      .then(helpers.failIfNotFound('Skill not found'))
       .then(skill => {
         req.skill = skill;
       })
@@ -28,7 +28,7 @@ export class SkillController {
   create(req, res, next) {
     if (req.body.name) {
       Skill.create(req.body)
-        .catch(errors.throwUnprocessableEntity("Skill not created"))
+        .catch(errors.throwUnprocessableEntity('Skill not created'))
         .then(helpers.successResponse(res))
         .catch(errors.nextErr(next));
     } else {
@@ -44,7 +44,7 @@ export class SkillController {
 
   delete(req, res, next) {
     Skill.delete(req.skill)
-      .then(helpers.failIfNotRemoved("Error deleting skill"))
+      .then(helpers.failIfNotRemoved('Error deleting skill'))
       .then(helpers.successEmptyResponse(res))
       .catch(errors.nextErr(next));
   }

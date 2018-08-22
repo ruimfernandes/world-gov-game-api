@@ -1,4 +1,4 @@
-import { MongoConnection } from "./mongo";
+import { MongoConnection } from './mongo';
 
 const adapters = {
   mongo: MongoConnection

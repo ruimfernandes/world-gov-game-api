@@ -1,17 +1,17 @@
-import { Router } from "express";
-import ctrl from "./controller";
+import { Router } from 'express';
+import ctrl from './controller';
 
 function SkillRouter() {
   const router = Router();
 
-  router.param("skillId", ctrl.setSkillId);
+  router.param('skillId', ctrl.setSkillId);
 
   router
-    .route("/")
+    .route('/')
     .get(ctrl.find)
     .post(ctrl.create);
   router
-    .route("/:skillId")
+    .route('/:skillId')
     .get(ctrl.findByID)
     .put(ctrl.update)
     .delete(ctrl.delete);

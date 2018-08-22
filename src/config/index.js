@@ -3,11 +3,11 @@ export const server = {
 };
 
 export const db = {
-  adapter: "mongo"
+  adapter: 'mongo'
 };
 
 export const mongo = {
-  url: "mongodb://192.168.99.100:27017/world-gov-db",
+  url: 'mongodb://192.168.99.100:27017/world-gov-db',
   options: {
     useNewUrlParser: true,
     reconnectTries: 30,

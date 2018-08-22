@@ -1,18 +1,18 @@
-import Q from "q";
-import mongoose from "mongoose";
+import Q from 'q';
+import mongoose from 'mongoose';
 
-import { DbConnection } from "../db-connection";
+import { DbConnection } from '../db-connection';
 
 export class MongoConnection extends DbConnection {
   constructor(url, options) {
-    super("mongo", url, options);
+    super('mongo', url, options);
   }
 
   init() {}
 
   connect() {
     const connectWithRetry = () => {
-      console.log("MongoDB connection with retry");
+      console.log('MongoDB connection with retry');
       mongoose.Promise = Promise;
       mongoose
         .connect(
@@ -20,12 +20,12 @@ export class MongoConnection extends DbConnection {
           this.options
         )
         .then(() => {
-          console.log("MongoDB is connected");
+          console.log('MongoDB is connected');
           this.onConnected();
         })
         .catch(err => {
           console.log(
-            "MongoDB connection unsuccessful, retry after 1.5 seconds."
+            'MongoDB connection unsuccessful, retry after 1.5 seconds.'
           );
           setTimeout(connectWithRetry, 1500);
         });
@@ -48,7 +48,7 @@ export class MongoConnection extends DbConnection {
 
   close() {
     mongoose.connection.close(() => {
-      this.logInfo("Connection closed on app termination");
+      this.logInfo('Connection closed on app termination');
     });
   }
 }
