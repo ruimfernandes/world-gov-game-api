@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import ctrl from './controller';
+import userSkillList from './user-skill-list';
 
 function UserRouter() {
   const router = Router();
@@ -15,6 +16,8 @@ function UserRouter() {
     .get(ctrl.findByID)
     .put(ctrl.update)
     .delete(ctrl.delete);
+
+  router.use('/:userId/skill', userSkillList);
 
   return router;
 }
