@@ -7,7 +7,7 @@ export const db = {
 };
 
 export const mongo = {
-  url: 'mongodb://192.168.99.100:27017/world-gov-db',
+  url: 'mongodb://mongo:27017/world-gov-db',
   options: {
     useNewUrlParser: true,
     reconnectTries: 30,
