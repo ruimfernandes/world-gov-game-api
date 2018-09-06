@@ -1,14 +1,14 @@
 {
   "name": "world-gov-game-api",
   "version": "1.0.0",
-  "description": "worrld gov game api",
+  "description": "world gov game api",
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/index.js --exec babel-node",
     "build": "babel src -d build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "docker-build": "docker build --tag repo.treescale.com/ruifernandes/world-gov-api:latest .",
-    "docker-push": "docker push repo.treescale.com/ruifernandes/world-gov-api",
+    "docker-build": "docker build --tag repo.treescale.com/ruifernandes/world-gov-game-api:latest .",
+    "docker-push": "docker push repo.treescale.com/ruifernandes/world-gov-game-api",
     "production": "node index.js"
   },
   "repository": {
